@@ -1,0 +1,80 @@
+Local:
+d:\Users\jcpld\OneDrive\Documentos\Alura\git-github
+
+Comandos GIT
+NOTAS:
+01 - Observar que o git "conversa" com o desenvolvedor, onde pede-se para o git realizar um determinado trabalho: git "faça alguma coisa"
+02 - Acessar Diretório (usar barra de data): cd /d/Users/jcpld/OneDrive/Documentos/Alura/git-github
+    > /aula001
+    > /servidor (bare)
+03 - "branch" é o ambiente que simula o prompt do linux, mesmo no windows, mais rico em informações sobre o tratamento de arquivos
+   - Pode ser utilizado o prompt do windows, mas não é tão detalhado em informações.
+   - neste ambiente, utilizam-se os comandos do linux
+
+TECLAS DE ATALHO:
+ctrl-shift : copia conteúdo na linha do prompt.
+shift + insert : cola conteúdo na linha do prompt.
+
+COMANDOS:
+clear : limpa tela de prompt
+
+git init : inicializa um repositorio: acesse o diretorio onde os seus fontes esteja, através do prompt do git, e digite "git init".
+    > --bare (puro) : diretorio onde será apenas um repositorio, utilizado para compartinhamento de arquivos alterados e commitados.
+    >   > Normalmente um "servidor"
+    >   > Este diretorio deve ser compartilhado entre todos os desenvolvedores ligados ao projeto
+
+git status : Apresenta como está o diretorio (repositorio) quais arquivos foram alterado e quais precisam ser salvos.
+    > tracked files : arquivos monitorados (tratados pelo git).
+    > untracked files : arquivos não monitorados pelo git, necessitam ser adicionados ao git para monitoramento (git add arquivo).
+    > HEAD : Estado atual do nosso código, ou seja, onde o Git os colocou
+    > Working tree : Local onde os arquivos realmente estão sendo armazenados e editados
+    > index : Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.
+
+git config ...
+    > --local : configura apenas o projeto em que vc se encontra
+    > --local user.name : Display do nome do desenvolvedor no github
+    > --local user.name "Seu nome aqui" : Registra o nome do desenvolvedor no github, deve ser feito a cada pasta de repositório
+    > --local user.email : Display do seu e-mail para contado
+    > --local user.email "seu@email.aqui" : Registra seu e-mail para contado, deve ser feito a cada pasta de repositório
+    > ex: 
+    >   > git config --local user.name "Julio"
+    >   > git config --local user.email "jcpld@hotmail.com"
+    > --global : configura a máquina toda
+    > Site : https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+
+git add arquivo : insere o nome do arquivo desejado na lista de arquivos monitorados pelo git.
+    > se for digitado apenas "git add ." no diretorio, sem o nome do arquivo, TODOS os arquivos da pasta serão inseridos na lista de monitoramento.
+
+git rm arquivo -f : remove o arquivo do diretorio e do monitoramento do git.
+    > -f : força a remoção.
+
+git commit -m "Mensagem de versionamento" : Realiza checkpoint das atualizações realizadas.
+    > -m (obrigatório) : Envia uma mensagem para este checkpoint de atualização
+    > "Mensagem de versionamento" : Descreve de forma sucinta o que foi versionado.
+    >   > [master (root-commit) ee7914a] Criando arquivo index.html com lista de cursos : quem fez (nivel de acesso) + mensagem de commit
+    >   > 1 file changed, 15 insertions(+) : quantidade de arquivos commitados, número de linhas alteradas 
+    >   > create mode 100644 index.html : informação interna do git
+    Obs: A cada commit, uma nova versão dos arquivos alterados devem ser adicionadas no repositorio do git, ou seja:
+        > git add arquivo <enter>
+        > git commit -m "Mensagem de versionamento"
+        Pode ser utilizado o comando "git commit -a", onde o "-a" descarta a versão anterior guardada no git e insere a nova, perdendo
+        assim o histórico de alterações realizadas.
+        > 1 file changed, 1 insertion(+), 1 deletion(-)
+        
+git log : permite visualizar todos os commits
+    > --oneline : um commit a cada linha
+    > -p : lista integralmente cada commit
+    > --pretty="format:%h" : display do hash (nr de commit)
+    > --pretty="format:%h %s" : display do hash (nr de commit) e descrição do commit
+    > --pretty="format:%h %s %ae" : display do hash (nr de commit) , descrição do commit e e-mail do autor
+    > site : https://devhints.io/git-log
+
+git remote : lista todos os repositórios remotos que o repositório local conhece.
+    > add apelido endereço : adiciona na pasta local de desenvolvimento o endereço do servidor remoto utilizado como repositorio
+    >   > Ex.: ../aula001 $ git remote add srv001 ../servidor
+    > -v : display dor servidores catalogados no git deste projeto aula001
+    >   > fetch apelido endereço : onde serão buscados os arquivos salvos
+    >   > push apelido endereco : de onde serão buscados os arquivos
+     
+
+
