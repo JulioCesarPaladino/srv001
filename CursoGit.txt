@@ -1,6 +1,10 @@
 Local:
 d:\Users\jcpld\OneDrive\Documentos\Alura\git-github
 
+github:
+hotmail > JulioCesarPaladino > gitxxxxxx1
+ghb001: https://github.com/JulioCesarPaladino/srv001.git
+
 Comandos GIT de Envio e atualização:
 > git add arquivo
 > git commit -m "Mensagem de versionamento do arquivo"
@@ -91,6 +95,8 @@ git clone endereço : traz todos os dados de um repositório remoto para o nosso
 
 git push alias (para servidor) master (de pasta) :  Envia todo o conteúdo da pasta local master para a pasta remota servidor
     > Ex. : git push srv001 master
+    > git push -u srv001 master
+    >   > -u define que, sempre que usarmos "git push" puro e estivermos na master, o envio seja feito para srv001
 
 git pull alias (do servidor) master (para pasta) : Busca todo o conteúdo da pasta servidor para a pasta local master
     > Ex. : git pull srv001 master
