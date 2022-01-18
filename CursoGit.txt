@@ -1,7 +1,14 @@
 Local:
 d:\Users\jcpld\OneDrive\Documentos\Alura\git-github
 
-Comandos GIT
+Comandos GIT de Envio e atualização:
+> git add arquivo
+> git commit -m "Mensagem de versionamento do arquivo"
+> git push alias (para servidor) master (de pasta)
+
+Comandos GIT de Busca atualizada:
+> git pull alias (do servidor) master (para pasta)
+
 NOTAS:
 01 - Observar que o git "conversa" com o desenvolvedor, onde pede-se para o git realizar um determinado trabalho: git "faça alguma coisa"
 02 - Acessar Diretório (usar barra de data): cd /d/Users/jcpld/OneDrive/Documentos/Alura/git-github
@@ -70,11 +77,20 @@ git log : permite visualizar todos os commits
     > site : https://devhints.io/git-log
 
 git remote : lista todos os repositórios remotos que o repositório local conhece.
-    > add apelido endereço : adiciona na pasta local de desenvolvimento o endereço do servidor remoto utilizado como repositorio
-    >   > Ex.: ../aula001 $ git remote add srv001 ../servidor
-    > -v : display dor servidores catalogados no git deste projeto aula001
-    >   > fetch apelido endereço : onde serão buscados os arquivos salvos
-    >   > push apelido endereco : de onde serão buscados os arquivos
-     
+    > add alias endereço : adiciona na pasta local de desenvolvimento o endereço do servidor remoto utilizado como repositorio
+    >   > Ex.: ../aula001 $ git remote add srv001 d:/Users/jcpld/OneDrive/Documentos/Alura/git-github/servidor
+    > -v ou --verbose : display dos servidores catalogados no git deste projeto aula001
+    >   > fetch alias endereço : onde serão buscados os arquivos salvos
+    >   > push alias endereco : de onde serão buscados os arquivos
+    > rename <alias velho> <alias novo>
+    > remove <alias>
 
+git clone endereço : traz todos os dados de um repositório remoto para o nosso repositório local pela primeira vez.
+    > Ex.: git clone d:/Users/jcpld/OneDrive/Documentos/Alura/git-github/servidor
+
+git push alias (para servidor) master (de pasta) :  Envia todo o conteúdo da pasta local master para a pasta remota servidor
+    > Ex. : git push srv001 master
+
+git pull alias (do servidor) master (para pasta) : Busca todo o conteúdo da pasta servidor para a pasta local master
+    > Ex. : git pull srv001 master
 
