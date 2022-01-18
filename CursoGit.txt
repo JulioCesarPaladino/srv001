@@ -22,6 +22,7 @@ TECLAS DE ATALHO:
 ctrl-shift : copia conteúdo na linha do prompt.
 shift + insert : cola conteúdo na linha do prompt.
 
+
 COMANDOS:
 clear : limpa tela de prompt
 
